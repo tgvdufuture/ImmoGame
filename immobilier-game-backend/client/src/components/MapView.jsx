@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
 import L from "leaflet"; // Import de Leaflet
-import "./MapView.css"; // Import des styles de la carte
 import "leaflet/dist/leaflet.css"; // Import des styles de Leaflet
 
 export function MapView() {
@@ -14,11 +13,16 @@ export function MapView() {
         center: [51.505, -0.09], // Position initiale de la carte (ici Londres)
         zoom: 13, // Niveau de zoom initial
         zoomControl: false, // Désactive le contrôle de zoom par défaut
+        crs: L.CRS.EPSG3857, // Projection de la carte (par défaut pour Leaflet)
       });
 
       // Ajouter un fond de carte noir et blanc (CartoDB Positron)
       L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png", {
-        attribution: '' // Attribuer une chaîne vide pour supprimer l'attribution
+        attribution: '', // Attribuer une chaîne vide pour supprimer l'attribution
+        noWrap: true, // Empêche la répétition horizontale des tuiles
+        continuousWorld: true, // Empêche la répétition de la carte sur le monde entier
+        maxZoom: 19, // Définir un niveau de zoom maximum
+        minZoom: 3, // Définir un niveau de zoom minimum
       }).addTo(leafletMap);
 
       // Ajouter un marker par défaut au centre
@@ -41,7 +45,6 @@ export function MapView() {
       {/* Div qui contiendra la carte */}
       <div
         ref={mapContainer}
-        className="map-container"
         style={{ height: "100vh", width: "100vw" }}
       >
         {/* La carte sera injectée ici par Leaflet */}
