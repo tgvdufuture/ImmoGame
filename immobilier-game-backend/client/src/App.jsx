@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router-dom"; // Utilisation de Routes et Ro
 import { MapView } from "./components/MapView";
 import { FloatingMenu } from "./components/FloatingMenu";
 import { SidePanel } from "./components/SidePanel";
+import PortailImmo from "./components/PortailImmo";
 import "./App.css";
 
 function App() {
@@ -10,16 +11,23 @@ function App() {
 
   return (
     <div>
-      <MapView />
-      <FloatingMenu />
-
-      {/* Le bouton burger */}
-      <button className="burger-button" onClick={() => setPanelOpen(true)}>
-        ☰
-      </button>
-
-      {/* Le panneau latéral qui s'ouvre */}
-      <SidePanel isOpen={panelOpen} onClose={() => setPanelOpen(false)} />
+      <Routes>
+        <Route path="/" element={
+          <>
+            <MapView />
+            <FloatingMenu />
+            {/* Le bouton burger */}
+            <button className="burger-button" onClick={() => setPanelOpen(true)}>
+              ☰
+            </button>
+            {/* Le panneau latéral qui s'ouvre */}
+            <SidePanel isOpen={panelOpen} onClose={() => setPanelOpen(false)} />
+          </>
+        } />
+        <Route path="/portail-immobilier" element={
+          <PortailImmo />
+        } />
+      </Routes>
     </div>
   );
 }
