@@ -1,0 +1,40 @@
+.menu-ferme {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(152, 152, 152, 0.37);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    width: 12.5rem;
+    height: 7.5em;
+    padding: 1rem 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    z-index: 1000;
+    color: black;
+}
+
+.menu-ferme svg {
+    stroke: black;
+    width: 2rem;
+    height: 2rem;
+}
+
+.menu-ferme h1 {
+    margin: 0;
+    font-size: 1.4rem;
+}
+
+.menu-ferme h2 {
+    margin: 0;
+    margin-left: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+}

@@ -1,0 +1,38 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+.menu-ferme{
+    background: rgba( 255, 255, 255, 0.25 );
+    box-shadow: 0 8px 32px 0 rgba(152, 152, 152, 0.37);
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 1rem;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    width: 15rem;
+    height: 7.5em;
+    padding: 1.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 2rem;
+    gap: 1rem;
+}
+
+.menu-ferme svg{
+    stroke: black;
+    width: 2rem;    
+}
+
+.menu-ferme h1{
+    margin: 0;
+}
+
+.menu-ferme h2{
+    margin: 0;
+    margin-left: .5rem;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
